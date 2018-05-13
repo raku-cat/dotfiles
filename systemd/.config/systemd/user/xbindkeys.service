@@ -1,0 +1,10 @@
+[Unit]
+Description=Launch shell commands with your keyboard or your mouse under X
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/xbindkeys -n
+Restart=always
+
+[Install]
+WantedBy=xsession.target

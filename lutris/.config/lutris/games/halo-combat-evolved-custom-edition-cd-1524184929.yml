@@ -1,0 +1,10 @@
+game:
+  args: -console -nowinkey -nojoystick -novideo -use21 -exec halocmds.txt
+  exe: drive_c/Program Files/Microsoft Games/Halo Custom Edition/haloce.exe
+  prefix: /home/josh/Games/halo-combat-evolved
+system:
+  disable_runtime: true
+wine:
+  Desktop: true
+  UseGLSL: disabled
+  WineDesktop: 1920x1080

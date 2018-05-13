@@ -1,0 +1,9 @@
+[Unit]
+Description=A fast and easy-to-use status bar %I
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/polybar %i
+
+[Install]
+WantedBy=xsession.target

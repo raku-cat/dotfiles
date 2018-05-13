@@ -1,0 +1,22 @@
+#/bin/bash
+if [[ "$1" == "" ]]; then
+	echo -e "No url supplied\n
+	Usage: nightly <git directory>"
+	exit 1
+else
+git -C $1 fetch
+LOCAL=$(git -C $1 rev-parse @)
+REMOTE=$(git -C $1 rev-parse @{u})
+BASE=$(git -C $1 merge-base @ @{u})
+
+if [ $LOCAL = $REMOTE ]; then
+	echo "You're up to date"
+	exit 0
+elif [ $LOCAL = $BASE ]; then
+	git -C $1 pull
+	gradle -p $1 assemble
+	exit 0
+else
+	exit 1
+fi
+fi

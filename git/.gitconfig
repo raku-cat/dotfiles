@@ -1,0 +1,10 @@
+[user]
+name = raku-cat
+email = raku@raku.party
+[push]
+        default = simple
+
+[color]
+	ui = auto
+[credential]
+	helper = cache

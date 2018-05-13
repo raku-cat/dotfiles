@@ -1,0 +1,9 @@
+[Unit]
+Description=Compositing manager
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/compton
+
+[Install]
+WantedBy=xsession.target

@@ -1,0 +1,9 @@
+[Unit]
+Description=Removable disk automounter using udisks
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/udiskie -a -s
+
+[Install]
+WantedBy=xsession.target

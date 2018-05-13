@@ -1,0 +1,194 @@
+[colors]
+my_background = #222222
+my_foreground = #ffffff
+
+[bar/left_bar]
+monitor = ${env:MONITOR:DVI-I-1}
+bottom = false
+width = 100%
+height = 20
+offset-x = 0
+offset-y = 0
+radius = 0.0
+fixed-center = true
+
+
+background = ${colors.my_background}
+foreground = ${colors.my_foreground}
+
+line-size = 2.5
+line-color = #233f66
+
+border-size = 0
+border-color = #657893
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = monospace:fontformat=truetype:size=8;0
+;font-1 = Noto Color Emoji:size=1;0
+;font-2 = monofur:fontformat=truetype:size=11;1
+
+modules-left = i3
+modules-center = date 
+modules-right = pulseaudio
+
+tray-position = right
+tray-padding = 1
+tray-transparent = false
+tray-offset-y = 0%
+tray-offset-x = 0%
+tray-maxsize = 18
+tray-detached = false
+tray-background = ${colors.my_background}
+
+;wm-restack = i3
+
+override-redirect = false
+
+[bar/right_bar]
+monitor = ${env:MONITOR:HDMI-0}
+bottom = false
+width = 100%
+height = 20
+offset-x = 0
+offset-y = 0
+radius = 0.0
+fixed-center = true
+
+
+background = ${colors.my_background}
+foreground = ${colors.my_foreground}
+
+line-size = 2.5
+line-color = #233f66
+
+border-size = 0
+border-color = #657893
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = monospace:size=8;0
+;font-1 = monofur:fontformat=truetype:size=11;1
+;font-2 = monofur:fontformat=truetype:size=11;1
+
+modules-left = i3
+
+;wm-restack = i3
+
+override-redirect = false
+
+[module/i3]
+type = internal/i3
+format = <label-state><label-mode>
+index-sort = true
+wrapping-scroll = false
+strip-wsnumbers = true
+pin-workspaces = true
+
+label-unfocused-background = ${colors.my_background}
+label-unfocused-foreground = ${colors.my_foreground}
+
+label-mode = %name%
+label-mode-padding = 2
+label-mode-background = #ff0000
+
+label-focused = %name%
+label-focused-foreground = ${colors.my_foreground}
+label-focused-background = ${colors.my_background}
+label-focused-underline = #0088CC
+label-focused-padding = 2
+
+label-unfocused = %name%
+label-unfocused-padding = 2
+
+label-visible = %name%
+label-visible-underline = ${colors.my_foreground}
+label-visible-padding = 2
+
+label-urgent = %index%
+label-urgent-foreground = ${colors.my_foreground}
+label-urgent-background = ${colors.my_background}
+label-urgent-underline = #900000
+label-urgent-padding = 2
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+;date-alt = "%d/%m/%Y"
+
+time = "%a %b %d, %H:%M "
+
+;time-alt = %H:%M
+
+format-prefix-foreground = ${colors.my_foreground}
+format-underline =
+
+
+label = %date% %time%
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Soundcard to be used
+; Usually in the format hw:#
+master-soundcard = hw:0
+
+; Name of the master mixer
+; Default: Master
+master-mixer = Master
+
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL
+label-volume-foreground = ${colors.my_foreground}
+
+format-muted-prefix =
+format-muted-foreground = #900000
+label-muted = VOL ░░░░░░░░░░
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+;bar-volume-indicator = |
+bar-volume-indicator-font = 2
+;bar-volume-fill = ─
+bar-volume-fill-font = 2
+;bar-volume-empty = ─
+bar-volume-indicator = ▓
+bar-volume-fill = ▒
+bar-volume-fill-font-style = bold
+bar-volume-empty = ░
+bar-volume-empty-foreground = ${colors.my_foreground}
+
+; Use volume mapping (similar to amixer -M and alsamixer), where the increase in volume is linear to the ear
+; Default: false
+mapped = true
+
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5

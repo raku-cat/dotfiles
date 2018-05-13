@@ -1,0 +1,11 @@
+game:
+  arch: win64
+  args: -SkipBuildPatchPrereq -opengl
+  exe: /home/josh/Games/fortnite/drive_c/Program Files (x86)/Epic Games/Launcher/Portal/Binaries/Win32/EpicGamesLauncher.exe
+  prefix: /home/josh/Games/fortnite
+system:
+  disable_monitoring: true
+  pulse_latency: false
+wine:
+  MouseWarpOverride: disable
+  version: system

@@ -1,0 +1,2 @@
+#!/bin/bash
+maim -m 1 -u -s -b 3 -p -1 | xclip -selection clipboard -t image/png

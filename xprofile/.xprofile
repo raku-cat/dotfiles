@@ -1,0 +1,3 @@
+(sleep 30 && DISPLAY=":0.0" nvidia-settings -a SyncToVBlank=0) &
+(sleep 30 && DISPLAY=":0.0" nvidia-settings -a [gpu:0]/GPUPowerMizerMode=1) &
+(sleep 3 && systemctl --no-block --user start xsession.target) &

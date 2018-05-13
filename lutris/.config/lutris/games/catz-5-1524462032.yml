@@ -1,0 +1,10 @@
+game:
+  arch: win32
+  exe: /home/josh/Games/petz/drive_c/Program Files/Ubi Soft/Studio Mythos/Petz 5/Petz
+    5.exe
+  prefix: ~/Games/petz
+system:
+  disable_runtime: true
+  resolution: 'off'
+wine:
+  Desktop: true

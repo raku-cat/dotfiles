@@ -1,0 +1,2 @@
+#!/bin/bash
+mpv $(youtube-dl -g $1)

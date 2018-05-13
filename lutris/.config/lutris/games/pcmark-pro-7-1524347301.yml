@@ -1,0 +1,6 @@
+game:
+  arch: win64
+  exe: /home/josh/Games/pcmark/drive_c/Program Files/Futuremark/PCMark 7/bin/PCMark7.exe
+  prefix: ~/Games/pcmark
+system: {}
+wine: {}
