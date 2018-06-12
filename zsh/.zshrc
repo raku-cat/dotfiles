@@ -57,6 +57,7 @@ export EDITOR=nano
 export QT_QPA_PLATFORMTHEME=qt5ct
 export QT_PLATFORMTHEME=qt5ct
 export QT_PLATFORM_PLUGIN=qt5ct
+export GPG_TTY=$(tty)
 
 autoload -Uz add-zsh-hook
 

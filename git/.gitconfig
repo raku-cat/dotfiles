@@ -1,10 +1,13 @@
 [user]
 name = raku-cat
 email = raku@raku.party
+	signingkey = 1443010172479E9B
 [push]
         default = simple
 
 [color]
 	ui = auto
 [credential]
-	helper = cache
+	helper = netrc -f ~/.netrc.gpg -v
+[commit]
+	gpgsign = true

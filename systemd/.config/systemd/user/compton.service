@@ -3,7 +3,7 @@ Description=Compositing manager
 PartOf=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/compton
+ExecStart=/usr/bin/compton -d :0.0
 
 [Install]
 WantedBy=xsession.target

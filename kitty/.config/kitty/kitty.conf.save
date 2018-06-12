@@ -52,7 +52,6 @@
 # For example:
 #
 symbol_map U+E0A0-U+E0A2,U+E0B0-U+E0B3 PowerlineSymbols
-#symbol_map U+2639-U+263A Noto Color Emoji
 
 # Change the sizes of the lines used for the box drawing unicode characters
 # These values are in pts. They will be scaled by the monitor DPI to arrive at
@@ -354,8 +353,8 @@ color15  #EEEEEC
  map ctrl+down      scroll_line_down
 # map ctrl+shift+k         scroll_line_up
 # map ctrl+shift+j         scroll_line_down
- map shift+page_up   scroll_page_up
- map shift+page_down scroll_page_down
+ map ctrl+page_up   scroll_page_up
+ map ctrl+page_down scroll_page_down
 # map ctrl+shift+home      scroll_home
 # map ctrl+shift+end       scroll_end
 # map ctrl+shift+h         show_scrollback
@@ -435,7 +434,7 @@ color15  #EEEEEC
 #
 # Open a currently visible URL using the keyboard. The program used to open the
 # URL is specified in open_url_with.
-# map ctrl+shift+e         run_kitten text hints
+ map ctrl+shift+e         run_kitten text hints
 
 # Select a path/filename and insert it into the terminal. Useful, for instance to
 # run git commands on a filename output from a previous git command.

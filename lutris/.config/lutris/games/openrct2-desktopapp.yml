@@ -1,0 +1,7 @@
+game:
+  appid: openrct2
+  args: '""'
+  exe: /usr/bin/openrct2
+linux: {}
+system:
+  disable_runtime: true

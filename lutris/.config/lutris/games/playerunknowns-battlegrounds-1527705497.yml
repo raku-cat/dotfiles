@@ -1,0 +1,11 @@
+game:
+  arch: win64
+  args: -opengl
+  exe: /home/josh/Games/playerunknowns-battlegrounds/drive_c/Program Files/TxGameAssistant/AppMarket/AppMarket.exe
+  prefix: ~/Games/playerunknowns-battlegrounds
+system: {}
+wine:
+  Desktop: true
+  ShowCrashDialog: false
+  dxvk: true
+  version: staging-3.7-x86_64

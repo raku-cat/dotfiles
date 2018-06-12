@@ -1,0 +1,49 @@
+#!/bin/bash
+
+[ "$UID" -eq 0 ] || exec sudo bash "$0" "$@"
+
+
+MODULE="v4l2loopback"
+
+while test $# -gt 0; do
+    case "$1" in
+        -R)
+            shift
+            if lsmod | grep -Eq "^${MODULE} " ; then
+                modprobe -r v4l2loopback
+            fi
+            shift
+            ;;
+         *)
+            break
+            ;;
+    esac
+done
+
+
+CAMLIST=( \
+    "Venus USB2.0 Camera" \
+    "Microsoft® LifeCam HD-3000" \
+    "Logitech Quickcam Orbit" \
+    "Live! Cam Sync HD VF0770" \
+    "Webcam C110" \
+    "Astra Pro HD Camera" \
+    "Logitech Webcam C210" \
+    "USB 2.0 Camera" \
+    "Microsoft® LifeCam Show(TM)" \
+    "DMK 23UP031-AF" \
+    "HP HD Camera" \
+    "Integrated Camera" \
+    "eFace 2025" \
+    "Creative Optia AF" \
+    "Logitech WebCam" \
+    "HD Pro Webcam C920" \
+    "Intel RealSense 3D Camera R200" \
+    "DFK 23UV024" \
+    "Microsoft LifeCam VX-3000" \
+    "Logitech Webcam C300" \
+)
+
+CAM=${CAMLIST[$RANDOM % ${#CAMLIST[@]}]}
+
+modprobe v4l2loopback video_nr=0 card_label="'$CAM'" exclusive_caps=1,0

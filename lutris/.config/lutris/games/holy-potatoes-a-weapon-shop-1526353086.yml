@@ -1,4 +1,5 @@
+game:
+  appid: '363600'
 steam:
   run_without_steam: false
-  steam_native_runtime: true
 system: {}

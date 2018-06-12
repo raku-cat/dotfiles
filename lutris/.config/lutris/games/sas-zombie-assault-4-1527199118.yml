@@ -1,0 +1,11 @@
+game:
+  appid: '678800'
+  arch: win64
+  nolaunch: false
+system: {}
+winesteam:
+  ShowCrashDialog: true
+  UseGLSL: enabled
+  dxvk: true
+  version: staging-3.7-x86_64
+  xinput-arch: ''
