@@ -46,4 +46,4 @@ CAMLIST=( \
 
 CAM=${CAMLIST[$RANDOM % ${#CAMLIST[@]}]}
 
-modprobe v4l2loopback video_nr=0 card_label="'$CAM'" exclusive_caps=1,0
+modprobe v4l2loopback video_nr=0 card_label='"'$CAM'"' exclusive_caps=1,0
