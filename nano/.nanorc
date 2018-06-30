@@ -1,0 +1,15 @@
+include ~/.nano/syntax/pkgbuild.nanorc
+include ~/.nano/syntax/pkg-config.nanorc
+include /usr/share/nano/*.nanorc
+set tabsize 4
+set tabstospaces
+set nonewlines
+set nowrap
+set smarthome
+set smooth
+set speller 'aspell -c'
+set autoindent
+set morespace
+set mouse
+set nohelp
+bind ^J enter main
