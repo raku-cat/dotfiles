@@ -3,7 +3,7 @@ Description=Compositing manager
 PartOf=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/glendale -d :0
+ExecStart=/usr/bin/glendale -d :0 --config /dev/null --glx-no-stencil
 
 [Install]
 WantedBy=xsession.target
