@@ -1,0 +1,7 @@
+game:
+  appid: atlauncher
+  args: ''
+  exe: /usr/bin/atlauncher
+linux: {}
+system:
+  disable_runtime: true

@@ -50,7 +50,7 @@ mainbox {
 	padding: 8;
 	border-radius: 0;
 	background-color: @background;
-	children: [inputbar, message, sidebar, listview];
+	children: [inputbar, message, listview];
 }
 
 message {
@@ -131,7 +131,7 @@ scrollbar {
 	padding: 0;
 }
 
-sidebar {
+mode-switcher {
 	border: 0px ;
 	border-color: @separator-color;
 }

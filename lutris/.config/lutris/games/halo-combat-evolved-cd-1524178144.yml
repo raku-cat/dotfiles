@@ -1,7 +1,0 @@
-game:
-  exe: /home/josh/Games/halo-combat-evolved/drive_c/Program Files/Microsoft Games/Halo/halo.exe
-  prefix: /home/josh/Games/halo-combat-evolved
-system:
-  disable_runtime: true
-wine:
-  Desktop: true

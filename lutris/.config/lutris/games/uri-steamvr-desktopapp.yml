@@ -1,0 +1,7 @@
+game:
+  appid: valve-URI-steamvr
+  args: '""'
+  exe: /home/josh/.local/share/Steam/steamapps/common/SteamVR/bin/linux64/vrurlhandler
+linux: {}
+system:
+  disable_runtime: true

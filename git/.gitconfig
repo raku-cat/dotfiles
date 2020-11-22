@@ -1,7 +1,7 @@
 [user]
 name = raku-cat
 email = raku@raku.party
-	signingkey = 1443010172479E9B
+	signingkey = EBF562A4FDD954B1
 [push]
         default = simple
 

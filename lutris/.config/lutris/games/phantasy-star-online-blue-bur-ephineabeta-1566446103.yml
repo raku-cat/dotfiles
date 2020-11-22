@@ -1,0 +1,14 @@
+game:
+  arch: win64
+  exe: /home/josh/Games/phantasy-star-online-blue-burst/drive_c/users/josh/EphineaPSO/psobb.exe
+  prefix: /home/josh/Games/phantasy-star-online-blue-burst
+system:
+  env:
+    DXVK_HUD: fps
+    __GL_SHADER_DISK_CACHE: '1'
+    __GL_SHADER_DISK_CACHE_PATH: /home/josh/Games/phantasy-star-online-blue-burst
+  pulse_latency: true
+wine:
+  dxvk: true
+  esync: true
+  version: ge-faudio-protonified-4.8-x86_64

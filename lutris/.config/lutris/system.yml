@@ -1,3 +1,3 @@
 system:
-  sdl_video_fullscreen: '1'
-  terminal_app: termite
+  sdl_video_fullscreen: '2'
+  terminal_app: kitty

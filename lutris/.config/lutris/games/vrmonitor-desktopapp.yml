@@ -1,0 +1,7 @@
+game:
+  appid: valve-vrmonitor
+  args: '""'
+  exe: /home/josh/.local/share/Steam/steamapps/common/SteamVR/bin/linux64/../vrmonitor.sh
+linux: {}
+system:
+  disable_runtime: true

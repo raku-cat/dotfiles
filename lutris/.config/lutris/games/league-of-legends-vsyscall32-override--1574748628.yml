@@ -1,0 +1,18 @@
+game:
+  exe: /home/josh/Games/league-of-legends/drive_c/Riot Games/League of Legends/LeagueClient.exe
+  prefix: /home/josh/Games/league-of-legends
+system:
+  disable_compositor: true
+  env:
+    DXVK_LOG_LEVEL: none
+    DXVK_STATE_CACHE_PATH: /home/josh/Games/league-of-legends
+    STAGING_SHARED_MEMORY: '1'
+    WINE_LARGE_ADDRESS_AWARE: '1'
+    __GL_SHADER_DISK_CACHE: '1'
+    __GL_SHADER_DISK_CACHE_PATH: /home/josh/Games/league-of-legends
+  prelaunch_command: /home/josh/Games/league-of-legends/syscall_check.sh
+wine:
+  Desktop: true
+  MouseWarpOverride: enable
+  dxvk: true
+  version: lutris-lol-4.20-x86_64

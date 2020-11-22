@@ -1,2 +1,2 @@
 #!/bin/bash
-maim -m 1 -s -u -b 3 -p -1 $1 | xclip -selection clipboard -t image/png
+maim -s -u -b 3 -p -1 $1 | xclip -selection clipboard -t image/png

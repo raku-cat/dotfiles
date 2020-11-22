@@ -1,0 +1,3 @@
+#!/bin/bash
+
+WINEARCH=win32 /usr/bin/wineprefixcreate

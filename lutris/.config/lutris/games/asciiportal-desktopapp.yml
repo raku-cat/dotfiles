@@ -1,0 +1,7 @@
+game:
+  appid: asciiportal
+  args: ''
+  exe: /usr/bin/asciiportal
+linux: {}
+system:
+  disable_runtime: true

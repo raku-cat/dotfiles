@@ -1,0 +1,10 @@
+[Unit]
+Description=A general-purpose replacement for xautolock
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=xidlehook --not-when-fullscreen --not-when-audio --timer 600 xflock4 ''
+Restart=always
+
+[Install]
+WantedBy=xsession.target

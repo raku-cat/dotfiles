@@ -1,0 +1,38 @@
+#!/bin/bash
+
+dbDir='keepass'
+dbRoot='/home/josh/'
+
+if [ ! -f ${XDG_DATA_HOME:-$HOME/.local/share/keepass.kdbx} ]
+then
+    cp {$dbRoot$dbDir/,${XDG_DATA_HOME:-$HOME/.local/share/}}keepass.kdbx
+fi
+
+checkSyncStatus="`grive --dry-run -s $dbDir/keepass.kdbx -p $dbRoot 2>&1| tee /dev/tty | grep 'sync .*'`"
+
+if [ -n "$checkSyncStatus" ]
+then
+    if [[ "$checkSyncStatus" =~ "changed in local" ]]
+    then
+        read -p "Do you want to upload? [y/n]" -n 1 -r
+        echo
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            grive -u -s $dbDir -p $dbRoot
+        fi
+
+    elif [[ "$checkSyncStatus" =~ "changed in remote" ]]
+    then
+        read -p "Do you want to download? [y/m/n]" -n 1 -r
+        echo
+        if [[ $REPLY =~ ^[YyMm]$ ]]
+        then
+            cp {$dbRoot$dbDir/,${XDG_DATA_HOME:-$HOME/.local/share/}}keepass.kdbx
+            grive -s $dbDir -p $dbRoot
+            if [[ $REPLY =~ ^[Mm]$ ]]
+            then
+                keepassxc-cli merge -s {$dbRoot$dbDir/,${XDG_DATA_HOME:-$HOME/.local/share/}}keepass.kdbx
+            fi
+        fi
+    fi
+fi

@@ -1,0 +1,7 @@
+game:
+  appid: runelite
+  args: ''
+  exe: /usr/bin/runelite
+linux: {}
+system:
+  disable_runtime: true

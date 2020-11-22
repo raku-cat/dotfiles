@@ -1,0 +1,7 @@
+game:
+  appid: runescape-launcher
+  args: '""'
+  exe: /usr/bin/runescape-launcher
+linux: {}
+system:
+  disable_runtime: true
