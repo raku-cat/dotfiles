@@ -1,9 +1,12 @@
 [Unit]
-Description=A general-purpose replacement for xautolock
+Description=Automatic screen locker
 PartOf=graphical-session.target
 
 [Service]
-ExecStart=xidlehook --not-when-fullscreen --not-when-audio --timer 600 xflock4 ''
+Type=simple
+Environment=DISPLAY=:0
+Environment=XIDLEHOOK_SOCK=%t/xidlehook.socket
+ExecStart=/usr/bin/xidlehook --not-when-fullscreen --not-when-audio --socket $XIDLEHOOK_SOCK --timer 600 '/usr/bin/multilockscreen -l blur' '' --timer 600 '/usr/bin/xset dpms force off' ''
 Restart=always
 
 [Install]

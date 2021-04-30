@@ -1,9 +1,9 @@
 [Unit]
-Description=Removable disk automounter using udisks
+Description=Local add-on manager for Stremio
 PartOf=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/udiskie -a -s
+ExecStart=/bin/stremio
 
 [Install]
 WantedBy=xsession.target
