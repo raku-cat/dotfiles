@@ -1,40 +1,6 @@
 * {
 
 	font: "Input Mono 10";
-
-	/*background: rgba(37, 41, 51, 100%);*/
-	background: #222222;
-	foreground: #ffffff;
-
-	scrollbar: rgba(30, 34, 43, 100%);
-	/*inputbar-background: rgba(43, 47, 58, 100%);*/
-	inputbar-background: #333333;
-	border-color: rgba(30, 34, 43, 100%);
-	separator-color: #333333;
-	background-color: rgba(0, 0, 0, 0%);
-
-	normal-foreground: @foreground;
-	normal-background: @background;
-	selected-normal-foreground: @foreground;
-	selected-normal-background: rgba(0, 136, 204, 100%);
-	/*selected-normal-backround: #ffffff;*/
-	alternate-normal-foreground: @foreground;
-	alternate-normal-background: @background;
-
-	active-foreground: rgba(181, 85, 95, 100%);
-	active-background: @background;
-	selected-active-foreground: rgba(181, 85, 95, 100%);
-	selected-active-background: @selected-normal-background;
-	alternate-active-foreground: @active-foreground;
-	alternate-active-background: @background;
-
-	urgent-foreground: rgba(181, 85, 95, 100%);
-	urgent-background: @background;
-	selected-urgent-foreground: rgba(181, 85, 95, 100%);
-	selected-urgent-background: @selected-normal-background;
-	alternate-urgent-foreground: @urgent-foreground;
-	alternate-urgent-background: @background;
-
 }
 
 window {
