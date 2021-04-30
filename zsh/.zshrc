@@ -32,7 +32,8 @@ setopt COMPLETE_ALIASES
 
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='lsd'
+    #alias ls='ls --color=auto'
     alias dir='dir --color=auto'
     alias vdir='vdir --color=auto'
 
@@ -128,3 +129,4 @@ export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
 export PATH="/home/josh/.local/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
