@@ -1,124 +1,8 @@
 [colors]
-my_background = #222222
-my_foreground = #ffffff
-
-[bar/left_bar]
-monitor = ${env:MONITOR:DVI-D-0}
-bottom = false
-width = 100%
-height = 20
-offset-x = 0
-offset-y = 0
-radius = 0.0
-fixed-center = true
-
-
-background = ${colors.my_background}
-foreground = ${colors.my_foreground}
-
-line-size = 2.5
-line-color = #233f66
-
-border-size = 0
-border-color = #657893
-
-padding-left = 0
-padding-right = 0
-
-module-margin-left = 0
-module-margin-right = 1
-
-font-0 = monospace:size=8;0
-font-1 = Unifont:size=10;0
-;font-2 = monofur:fontformat=truetype:size=11;1
-
-modules-left = i3
-modules-center = date 
-modules-right = player-mpris-simple pulseaudio
-
-tray-position = right
-tray-padding = 1
-tray-offset-y = 0%
-tray-offset-x = 0%
-tray-maxsize = 18
-tray-detached = false
-tray-background = ${colors.my_background}
-
-;wm-restack = i3
-
-override-redirect = false
-
-[bar/mid_bar]
-monitor = ${env:MONITOR:DP-0}
-bottom = false
-width = 100%
-height = 20
-offset-x = 0
-offset-y = 0
-radius = 0.0
-fixed-center = true
-
-
-background = ${colors.my_background}
-foreground = ${colors.my_foreground}
-
-line-size = 2.5
-line-color = #233f66
-
-border-size = 0
-border-color = #657893
-
-padding-left = 0
-padding-right = 0
-
-module-margin-left = 0
-module-margin-right = 0
-
-font-0 = monospace:size=8;0
-;font-1 = monofur:fontformat=truetype:size=11;1
-;font-2 = monofur:fontformat=truetype:size=11;1
-
-modules-left = i3
-
-;wm-restack = i3
-
-override-redirect = false
-
-[bar/right_bar]
-monitor = ${env:MONITOR:DP-5}
-bottom = false
-width = 100%
-height = 20
-offset-x = 0
-offset-y = 0
-radius = 0.0
-fixed-center = true
-
-
-background = ${colors.my_background}
-foreground = ${colors.my_foreground}
-
-line-size = 2.5
-line-color = #233f66
-
-border-size = 0
-border-color = #657893
-
-padding-left = 0
-padding-right = 0
-
-module-margin-left = 0
-module-margin-right = 0
-
-font-0 = monospace:size=8;0
-;font-1 = monofur:fontformat=truetype:size=11;1
-;font-2 = monofur:fontformat=truetype:size=11;1
-
-modules-left = i3
-
-;wm-restack = i3
-
-override-redirect = false
+;my_background = #222222
+;my_foreground = #ffffff
+my_background = #2d303b
+my_foreground = #c4cbd4
 
 [module/i3]
 type = internal/i3
@@ -138,7 +22,7 @@ label-mode-background = #ff0000
 label-focused = %name%
 label-focused-foreground = ${colors.my_foreground}
 label-focused-background = ${colors.my_background}
-label-focused-underline = #0088CC
+label-focused-underline = #4084d6
 label-focused-padding = 2
 
 label-unfocused = %name%
@@ -158,7 +42,7 @@ label-urgent-padding = 2
 type = internal/date
 interval = 5
 
-date =
+;date =
 ;date-alt = "%d/%m/%Y"
 
 time = "%a %b %d, %H:%M "
@@ -166,7 +50,7 @@ time = "%a %b %d, %H:%M "
 ;time-alt = %H:%M
 
 format-prefix-foreground = ${colors.my_foreground}
-format-underline =
+;format-underline =
 
 
 label = %date% %time%
@@ -215,9 +99,13 @@ bar-volume-empty-foreground = ${colors.my_foreground}
 ; Default: false
 mapped = true
 
+click-right = pavucontrol
+
+
 [module/player-mpris-simple]
 type = custom/script
 exec = ~/polybar-scripts/player-mpris-simple.sh
+label-maxlen = 65
 interval = 1
 click-left = 
 click-right = 
@@ -230,7 +118,25 @@ compositing-foreground = over
 compositing-overline = over
 compositing-underline = over
 compositing-border = over
+include-directory = /home/josh/.config/polybar/configs
 
 [global/wm]
 margin-top = 5
 margin-bottom = 5
+
+[module/dsbattery]
+type = custom/script
+exec = ~/polybar-scripts/dsbattery
+
+[module/i3-window]
+type = custom/script
+label = %output:0:50:...%
+label-foreground = ${colors.my_foreground}
+tail = true
+
+[module/system-bluetooth-bluetoothctl]
+type = custom/script
+# format-prefix = ""
+exec = ~/polybar-scripts/system-bluetooth-bluetoothctl.sh
+tail = true
+click-left = ~/polybar-scripts/system-bluetooth-bluetoothctl.sh --toggle &

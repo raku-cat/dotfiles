@@ -1,0 +1,42 @@
+[bar/mid_bar]
+monitor = ${env:MONITOR:DP-0}
+bottom = false
+width = 100%
+height = 20
+offset-x = 0
+offset-y = 0
+radius = 0.0
+fixed-center = true
+
+
+background = ${colors.my_background}
+foreground = ${colors.my_foreground}
+
+line-size = 2.5
+line-color = #233f66
+
+border-size = 0
+border-color = #657893
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 1
+
+font-0 = monospace:size=8;0
+font-1 = Unifont:size=10;0
+font-2 = JoyPixels:scale=12;0
+font-3 = Symbols Nerd Font:size=10;0
+
+modules-left = i3
+modules-center = mid-i3-window
+modules-right = dsbattery system-bluetooth-bluetoothctl
+
+;wm-restack = i3
+
+override-redirect = false
+
+[module/mid-i3-window]
+inherit = module/i3-window
+exec = ~/polybar-scripts/polybar-i3-window/i3-window.py DP-0

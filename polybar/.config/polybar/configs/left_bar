@@ -1,0 +1,46 @@
+[bar/left_bar]
+monitor = ${env:MONITOR:DVI-D-0}
+bottom = false
+width = 100%
+height = 20
+offset-x = 0
+offset-y = 0
+radius = 0.0
+fixed-center = true
+
+
+background = ${colors.my_background}
+foreground = ${colors.my_foreground}
+
+line-size = 2.5
+line-color = #233f66
+
+border-size = 0
+border-color = #657893
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 1
+
+font-0 = monospace:size=8;0
+font-1 = Unifont:size=10;0
+font-2 = JoyPixels:scale=14;0
+;font-2 = monofur:fontformat=truetype:size=11;1
+
+modules-left = i3
+modules-center = date
+modules-right = player-mpris-simple pulseaudio
+
+tray-position = right
+tray-padding = 1
+tray-offset-y = 0%
+tray-offset-x = 0%
+tray-maxsize = 18
+tray-detached = false
+tray-background = ${colors.my_background}
+
+;wm-restack = i3
+
+override-redirect = false
