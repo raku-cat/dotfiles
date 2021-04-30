@@ -1,7 +1,0 @@
-game:
-  appid: '211820'
-  args: ''
-steam:
-  quit_steam_on_exit: false
-  steam_native_runtime: true
-system: {}

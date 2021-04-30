@@ -1,0 +1,3 @@
+#!/bin/bash
+#export PULSE_SINK='1'
+/usr/bin/ffplay $@

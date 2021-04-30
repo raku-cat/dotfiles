@@ -1,2 +1,3 @@
-(sleep 30 && DISPLAY=":0" nvidia-settings -a [gpu:0]/GPUPowerMizerMode=1) &
 #(sleep 3 && systemctl --no-block --user start xsession.target) &
+[ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
+VDPAU_DRIVER=va_gl

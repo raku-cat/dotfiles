@@ -1,5 +1,5 @@
 #!/bin/bash
 
-/usr/bin/multilockscreen -l blur >/dev/null 2>&1 &
-# turn off display backlight:
+loginctl lock-session
+# turn of display backlight
 sleep 0.05 ; xset dpms force suspend

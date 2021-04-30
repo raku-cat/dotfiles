@@ -1,8 +1,54 @@
 [colors]
-;my_background = #222222
-;my_foreground = #ffffff
 my_background = #2d303b
 my_foreground = #c4cbd4
+
+[bar/main_bar]
+monitor = ${env:MONITOR:eDP-1}
+bottom = false
+width = 100%
+height = 20
+offset-x = 0
+offset-y = 0
+radius = 0.0
+fixed-center = true
+
+
+background = ${colors.my_background}
+foreground = ${colors.my_foreground}
+
+line-size = 2.5
+line-color = #233f66
+
+border-size = 0
+border-color = #657893
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 1
+
+font-0 = monospace:size=8;0
+font-1 = Unifont:size=10;0
+font-2 = JoyPixels:scale=14;0
+font-3 = Symbols Nerd Font:size=10;1
+
+modules-left = i3
+modules-center = date 
+modules-right = keyboard backlight pulseaudio battery
+
+tray-position = right
+tray-padding = 1
+tray-offset-y = 0%
+tray-offset-x = 0%
+tray-maxsize = 18
+tray-scale = 1
+tray-detached = false
+atray-background = ${colors.my_background}
+
+;wm-restack = i3
+
+override-redirect = false
 
 [module/i3]
 type = internal/i3
@@ -42,7 +88,7 @@ label-urgent-padding = 2
 type = internal/date
 interval = 5
 
-;date =
+date =
 ;date-alt = "%d/%m/%Y"
 
 time = "%a %b %d, %H:%M "
@@ -50,7 +96,7 @@ time = "%a %b %d, %H:%M "
 ;time-alt = %H:%M
 
 format-prefix-foreground = ${colors.my_foreground}
-;format-underline =
+format-underline =
 
 
 label = %date% %time%
@@ -101,15 +147,97 @@ mapped = true
 
 click-right = pavucontrol
 
+[module/battery]
+type = internal/battery
 
-[module/player-mpris-simple]
-type = custom/script
-exec = ~/polybar-scripts/player-mpris-simple.sh
-label-maxlen = 65
-interval = 1
-click-left = 
-click-right = 
-click-middle =
+; This is useful in case the battery never reports 100% charge
+full-at = 100
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = AC0
+
+
+; see "man date" for details on how to format the time string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+; Default: %H:%M:%S
+time-format = %H:%M
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <label-charging><animation-charging>
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-discharging> (unreleased-)
+format-discharging = <label-discharging><ramp-capacity>
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+format-full = <ramp-capacity>
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+label-charging = %percentage%%(%time%)
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging = %percentage%%(%time%)
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 500
+
+[module/keyboard]
+type = internal/xkeyboard
+
+; Available tags:
+;   <label-layout> (default)
+;   <label-indicator> (default)
+format = <label-indicator>
+format-spacing = 0
+
+; Available tokens:
+;   %name%
+; Default: %name%
+label-indicator-on = %name%
+label-indicator-padding = 2
+label-indicator-background = #8139e8
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+format =  <bar>
+
+bar-width = 10
+bar-indicator = ▓
+bar-fill = ▒
+bar-empty = ░
+
 
 [settings]
 screenchange-reload = true
@@ -118,25 +246,7 @@ compositing-foreground = over
 compositing-overline = over
 compositing-underline = over
 compositing-border = over
-include-directory = /home/josh/.config/polybar/configs
 
 [global/wm]
 margin-top = 5
 margin-bottom = 5
-
-[module/dsbattery]
-type = custom/script
-exec = ~/polybar-scripts/dsbattery
-
-[module/i3-window]
-type = custom/script
-label = %output:0:50:...%
-label-foreground = ${colors.my_foreground}
-tail = true
-
-[module/system-bluetooth-bluetoothctl]
-type = custom/script
-# format-prefix = ""
-exec = ~/polybar-scripts/system-bluetooth-bluetoothctl.sh
-tail = true
-click-left = ~/polybar-scripts/system-bluetooth-bluetoothctl.sh --toggle &

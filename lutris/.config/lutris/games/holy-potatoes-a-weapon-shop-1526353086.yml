@@ -1,5 +1,0 @@
-game:
-  appid: '363600'
-steam:
-  run_without_steam: false
-system: {}

@@ -8,7 +8,7 @@ then
     cp {$dbRoot$dbDir/,${XDG_DATA_HOME:-$HOME/.local/share/}}keepass.kdbx
 fi
 
-checkSyncStatus="`grive --dry-run -s $dbDir/keepass.kdbx -p $dbRoot 2>&1| tee /dev/tty | grep 'sync .*'`"
+checkSyncStatus="`grive --dry-run -s $dbDir -p $dbRoot 2>&1| tee /dev/tty | grep 'sync .*'`"
 
 if [ -n "$checkSyncStatus" ]
 then

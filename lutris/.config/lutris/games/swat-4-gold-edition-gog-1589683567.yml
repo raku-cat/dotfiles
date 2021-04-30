@@ -1,5 +1,0 @@
-game:
-  exe: drive_c/GOG Games/SWAT 4/Content/System/Swat4.exe
-  prefix: /home/josh/Games/swat-4-gold-edition
-wine:
-  version: lutris-5.6-2-x86_64

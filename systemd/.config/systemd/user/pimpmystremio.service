@@ -1,9 +1,0 @@
-[Unit]
-Description=Local add-on manager for Stremio
-PartOf=graphical-session.target
-
-[Service]
-ExecStart=/usr/bin/pimpmystremio
-
-[Install]
-WantedBy=xsession.target

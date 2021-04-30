@@ -167,7 +167,7 @@ handle_fallback() {
 }
 
 
-MIMETYPE="$( file --dereference --brief --mime-type -- "${FILE_PATH}" )"
+MIMETYPE="$( python -m mimetypes -- "${FILE_PATH}" | awk -F' ' '{print $2}' )"
 if [[ "${PV_IMAGE_ENABLED}" == 'True' ]]; then
     handle_image "${MIMETYPE}"
 fi
