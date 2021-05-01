@@ -210,6 +210,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+a exec /home/josh/.bin/abort.sh
 
 exec --no-startup-id "sh -c 'sleep 3 ; systemctl --no-block --user start xsession.target'"
+exec --no-startup-id "sh -c 'systemctl --user import-environment XDG_SESSION_ID'"
 exec --no-startup-id "sh -c 'sleep 5 ; /usr/bin/syspeek'"
 #exec --no-startup-id "sh -c 'sleep 3 ; xidlehook --not-when-fullscreen --not-when-audio --timer primary 600 xflock4 '"
 exec --no-startup-id "sh -c 'sleep 5 ; /usr/bin/nm-applet'"
@@ -270,7 +271,7 @@ bindsym XF86AudioPlay exec --no-startup-id playerctl -p playerctld play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl -p playerctld next
 bindsym XF86AudioPrev exec --no-startup-id playerctl -p playerctld previous
 
-bindsym XF86PowerOff exec --no-startup-id /usr/local/bin/power-menu.sh
+bindsym XF86PowerOff exec --no-startup-id rofi -show power-menu -modi power-menu:rofi-power-menu
 
 for_window [class="^.*"] border pixel 0
 
