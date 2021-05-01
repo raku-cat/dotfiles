@@ -1,5 +1,7 @@
 #!/bin/bash
 
-loginctl lock-session
-# turn of display backlight
-sleep 0.05 ; xset dpms force suspend
+# turn off display backlight:
+sleep 0.50 ; xset dpms force suspend
+
+# lock screen
+loginctl lock-session >/dev/null 2>&1 &
