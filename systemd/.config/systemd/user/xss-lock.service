@@ -7,4 +7,4 @@ Type=simple
 ExecStart=/usr/bin/xss-lock -s ${XDG_SESSION_ID} -- /usr/bin/multilockscreen -l blur
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=xsession.target
