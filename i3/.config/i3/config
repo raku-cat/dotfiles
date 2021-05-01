@@ -225,7 +225,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
-bindsym XF86PowerOff exec --no-startup-id shutdown_menu
+bindsym XF86PowerOff exec --no-startup-id rofi -show power-menu -modi power-menu:rofi-power-menu
 
 for_window [class="^.*"] border pixel 0
 
